@@ -19,13 +19,15 @@ class CollectiveChecklistLayer(PloneSandboxLayer):
         # The z3c.autoinclude feature is disabled in the Plone fixture base
         # layer.
         import plone.app.dexterity
+
         self.loadZCML(package=plone.app.dexterity)
         import plone.restapi
+
         self.loadZCML(package=plone.restapi)
         self.loadZCML(package=collective.checklist)
 
     def setUpPloneSite(self, portal):
-        applyProfile(portal, 'collective.checklist:default')
+        applyProfile(portal, "collective.checklist:default")
 
 
 COLLECTIVE_CHECKLIST_FIXTURE = CollectiveChecklistLayer()
@@ -33,13 +35,13 @@ COLLECTIVE_CHECKLIST_FIXTURE = CollectiveChecklistLayer()
 
 COLLECTIVE_CHECKLIST_INTEGRATION_TESTING = IntegrationTesting(
     bases=(COLLECTIVE_CHECKLIST_FIXTURE,),
-    name='CollectiveChecklistLayer:IntegrationTesting',
+    name="CollectiveChecklistLayer:IntegrationTesting",
 )
 
 
 COLLECTIVE_CHECKLIST_FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(COLLECTIVE_CHECKLIST_FIXTURE,),
-    name='CollectiveChecklistLayer:FunctionalTesting',
+    name="CollectiveChecklistLayer:FunctionalTesting",
 )
 
 
@@ -49,5 +51,5 @@ COLLECTIVE_CHECKLIST_ACCEPTANCE_TESTING = FunctionalTesting(
         REMOTE_LIBRARY_BUNDLE_FIXTURE,
         z2.ZSERVER_FIXTURE,
     ),
-    name='CollectiveChecklistLayer:AcceptanceTesting',
+    name="CollectiveChecklistLayer:AcceptanceTesting",
 )

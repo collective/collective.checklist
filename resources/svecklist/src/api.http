@@ -1,0 +1,100 @@
+@baseUrl = http://localhost:8080/Plone6
+
+###
+
+patch {{baseUrl}}/folder-1/checklist-1
+Authorization: Basic admin:admin
+content-type: application/json
+Accept: application/json
+
+{
+    "checklist": {"schema":[{"compType":"checkbox","checked":false,"text":"eins","weight":"50"},{"compType":"checkbox","checked":false,"text":"zwei","weight":"100"},{"compType":"checkbox","checked":false,"text":"drei","weight":"50"},{"compType":"checkbox","checked":false,"text":"vier","weight":0},{"compType":"textfield","checked":false,"text":"Kommentare","weight":0}],
+    "data":{"_meta":{"type":"map"},"value":[[0,{"checked":true}],[2,{"checked":true}],[4,{"textdata":"huhu"}]]}}
+}
+
+###
+
+get {{baseUrl}}/folder-1/checklist-1
+Authorization: Basic admin:admin
+Accept: application/json
+
+
+###
+
+get {{baseUrl}}/@vocabularies
+Authorization: Basic admin:admin
+
+###
+
+get {{baseUrl}}/events/test-termin-2
+Authorization: Basic admin:admin
+
+###
+
+get {{baseUrl}}/@vocabularies/collective.taxonomy.termin_art
+Authorization: Basic admin:admin
+
+
+###
+
+post {{baseUrl}}/@querystring-search
+content-type: application/json
+
+{
+    "query": [
+        {
+            "i": "portal_type",
+            "o": "plone.app.querystring.operation.selection.any",
+            "v": [
+                "Event"
+            ]
+        }
+    ]
+}
+
+###
+
+get https://fms6.rml.infraview.net/mng/anlagenmanagement/uebersicht-der-anlagen?metadata_fields=track&metadata_fields=taxonomy_gewerk
+Authorization: Basic plone:Y5ax5pdboAIvm2Wrn07p
+Accept: application/json
+
+###
+
+get https://fms6.rml.infraview.net/@taxonomy/collective.taxonomy.gewerk
+Authorization: Basic plone:Y5ax5pdboAIvm2Wrn07p
+Accept: application/json
+
+
+###
+
+get {{baseUrl}}/@controlpanels/date-and-time
+Authorization: Basic admin:admin
+
+###
+
+get {{baseUrl}}/@registry/plone.portal_timezone
+Authorization: Basic admin:admin
+
+###
+
+get {{baseUrl}}/events/aggregator?sort_on=start&sort_order=ascending&metadata_fields=start&metadata_fields=end&metadata_fields=Subject&metadata_fields=UID&metadata_fields=taxonomy_termin_art
+Authorization: Basic admin:admin
+Accept: application/json
+
+###
+
+get {{baseUrl}}/events/@search?portal_type=Event&sort_on=start&sort_order=ascending&metadata_fields=start&metadata_fields=end&metadata_fields=Subject&metadata_fields=UID&metadata_fields=taxonomy_termin_art
+Authorization: Basic admin:admin
+Accept: application/json
+###
+
+get {{baseUrl}}/events/aggregator/@search?portal_type=Event
+
+###
+get {{baseUrl}}/events/@search?portal_type=Event&sort_on=start&sort_order=ascending&metadata_fields=start&metadata_fields=end&metadata_fields=Subject&metadata_fields=UID&metadata_fields=taxonomy_termin_art
+
+###
+get {{baseUrl}}/events/@search?portal_type=Event&GanttEventRange.start=2022-01-03&GanttEventRange.end=2022-01-09&sort_on=start&sort_order=ascending&metadata_fields=start&metadata_fields=end&metadata_fields=effective
+
+###
+get {{baseUrl}}/events/@search?portal_type=Event&GanttEventRange.query.2022-01-03&GanttEventRange.query=2022-01-09GanttEventRange.range=min:max&sort_on=start&sort_order=ascending&metadata_fields=start&metadata_fields=end&metadata_fields=effective

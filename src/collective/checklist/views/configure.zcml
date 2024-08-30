@@ -7,7 +7,7 @@
  <!-- -*- extra stuff goes here -*- -->
 
   <browser:page
-    name="view"
+    name="checklist-edit"
     for="collective.checklist.content.checklist.IChecklist"
     class=".checklist_view.ChecklistView"
     template="checklist_view.pt"
@@ -15,4 +15,5 @@
     layer="collective.checklist.interfaces.ICollectiveChecklistLayer"
     />
 
+    <!-- for="collective.checklist.content.checklist.IChecklist" -->
 </configure>

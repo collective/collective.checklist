@@ -16,7 +16,7 @@ long_description = "\n\n".join(
 
 setup(
     name="collective.checklist",
-    version="0.1a2",
+    version="0.1a3.dev0",
     description="Checklist App for Plone",
     long_description=long_description,
     # Get more from https://pypi.org/classifiers/

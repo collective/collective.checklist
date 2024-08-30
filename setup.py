@@ -57,6 +57,7 @@ setup(
         "plone.api>=1.8.4",
         "plone.app.dexterity",
         "plone.schema",
+        "plone.app.z3cform>=4.4.1",
     ],
     extras_require={
         "test": [

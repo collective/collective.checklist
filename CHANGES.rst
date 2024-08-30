@@ -5,7 +5,7 @@ Changelog
 0.1a2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- depend on plone.app.z3cform >=4.4.1
 
 
 0.1a1 (2024-08-30)

@@ -5,7 +5,8 @@ Changelog
 0.1a3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- only use picocss colors, to mess with bootstrap and websites fonts
+  [MrTango]
 
 
 0.1a2 (2024-08-30)

@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-0.1a3 (unreleased)
+0.1a3 (2025-08-08)
 ------------------
 
 - only use picocss colors, to mess with bootstrap and websites fonts
